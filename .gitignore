@@ -1,0 +1,8 @@
+**/target/
+**/*.iml
+**/.idea/
+core/hyaena-web/bower_components/
+core/hyaena-web/node_modules/
+core/hyaena-web/src/main/webapp/public/js/lib/*
+core/hyaena-web/src/main/webapp/public/js/app/css/cdd/file/*.css
+core/hyaena-web/src/main/webapp/public/js/app/css/cdd/file/*.css.map

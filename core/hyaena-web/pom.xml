@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.hyaena</groupId>
+		<artifactId>hyaena-parent</artifactId>
+		<relativePath>../hyaena-parent/pom.xml</relativePath>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hyaena</groupId>
+			<artifactId>hyaena-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hyaena</groupId>
+			<artifactId>hyaena-service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dounine</groupId>
+			<artifactId>clouddisk</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+	</dependencies>
+
+	<artifactId>hyaena-web</artifactId>
+	<packaging>war</packaging>
+
+	<build>
+		<finalName>hyaena-web</finalName>
+		<plugins>
+			<!-- 编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<configuration>
+					<httpConnector>
+			          <port>8080</port>
+			        </httpConnector>
+			        <stopKey>shutdown</stopKey>
+			        <stopPort>9966</stopPort>
+					<reload>manual</reload><!-- 在控制台按Enter键可重新部署 -->
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/${project.artifactId}</contextPath>
+					</webApp>
+					<requestLog implementation="org.eclipse.jetty.server.NCSARequestLog">
+						<filename>target/访问请求记录-yyyy_mm_dd.log</filename><!-- 日志文件名称 -->
+						<filenameDateFormat>yyyy_MM_dd</filenameDateFormat><!-- 日志名称日期格式化方式 -->
+						<logDateFormat>yyyy-MM-dd HH:mm:ss</logDateFormat><!-- 日志内容日期格式化方式 -->
+						<logTimeZone>GMT+8:00</logTimeZone><!-- 时区 -->
+						<append>true</append><!-- 追加到日志 -->
+						<logServer>true</logServer><!-- 记录访问的主机名 -->
+						<retainDays>1</retainDays><!-- 日志文件保存的天数, 超过删除 -->
+						<logCookies>true</logCookies><!-- 记录 cookies -->
+					</requestLog>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	</build>
+
+</project>
