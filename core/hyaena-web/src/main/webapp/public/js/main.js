@@ -4,7 +4,6 @@ require.config({
     paths: {
         'app': 'app',
         'routers':'app/routers',
-        'index':'app/index',
         'module':'app/module',
         'dataservices':'app/dataservices',
         'directives':'app/directives',
@@ -17,6 +16,8 @@ require.config({
         'tether':'app/require-wrapper/tetherWrapper',
         'normalize':'lib/require-css/normalize',
         'angular-route': 'lib/angular-ui-router/angular-ui-router',
+        'icheck': 'lib/iCheck/icheck.min',
+        'flat-ui': 'lib/flat-ui/flat-ui',
         'angular-animate':'lib/angular-animate/angular-animate',
         'angular-file-upload':'lib/angular-file-upload/angular-file-upload.min',
         'angular-loading-bar':'lib/angular-loading-bar/loading-bar',
@@ -32,6 +33,9 @@ require.config({
         },
         'angular-animate':{
             'deps':['angular']
+        },
+        'icheck':{
+            'deps':['jquery']
         },
         'bootstrap':{
             'deps':[
@@ -65,6 +69,7 @@ window.name = 'NG_DEFER_BOOTSTRAP!';
 require([
     'angular',
     'app',
+    'icheck',
     'dataservices',
     'directives',
     'filters',

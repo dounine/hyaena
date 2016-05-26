@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.hyaena</groupId>
+  <groupId>com.dounine.hyaena</groupId>
   <artifactId>hyaena-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
 	<description>hyaena project parent module</description>
-	<url>http://hyaena.org</url>
+	<url>http://hyaena.dounine.com</url>
 	<inceptionYear>2016-05-14</inceptionYear>
   
   <properties>
@@ -20,6 +20,7 @@
 	  <jackson.version>2.5.3</jackson.version>
 	  <commons-fileupload.version>1.3.1</commons-fileupload.version>
 	  <commons.version>3.4</commons.version>
+	  <commons-io.version>2.5</commons-io.version>
 	  <slf4j.version>1.7.16</slf4j.version>
 	  <fastjson.version>1.2.11</fastjson.version>
 	  <clouddisk.version>1.1.3</clouddisk.version>
@@ -123,6 +124,11 @@
 			  <groupId>commons-fileupload</groupId>
 			  <artifactId>commons-fileupload</artifactId>
 			  <version>${commons-fileupload.version}</version>
+		  </dependency>
+		  <dependency>
+			  <groupId>commons-io</groupId>
+			  <artifactId>commons-io</artifactId>
+			  <version>${commons-io.version}</version>
 		  </dependency>
 		  <dependency>
 			  <groupId>org.ow2.asm</groupId>

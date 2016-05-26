@@ -81,9 +81,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: './src/main/webapp/public/js/app/',
+          cwd: './src/main/webapp/public/css/',
           src: ['**/*.scss'],
-          dest: './src/main/webapp/public/js/app/',
+          dest: './src/main/webapp/public/css/',
           ext: '.css'
         }]
         // files: {
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
       },
       sass:{
         files:[
-          './src/main/webapp/public/js/app/**/*.{sass,scss}'
+          './src/main/webapp/public/css/**/*.{sass,scss}'
         ],
         tasks:['sass:dist']
       },

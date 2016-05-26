@@ -1,11 +1,11 @@
-define(['angular','app/cddController'], function(angular) {
+define(['angular','app/controllers'], function(angular) {
 	'use strict';
 
-	var app = angular.module("dnnApp",["dnnApp.controllers.cdd","angular-loading-bar"]);
+	var app = angular.module("app",["app.controllers.hyaena","angular-loading-bar"]);
 	app.run(appRun);
 	function appRun($cookies,$rootScope) {
 		$cookies.clouddisk_account = "403833139@qq.com";
-		$rootScope.ctx = document.body.getAttribute("ctx");//项目根路径
+		$rootScope.ctx = document.body.getAttribute("C");//项目根路径
 	}
 
 	app.config(appConfig);

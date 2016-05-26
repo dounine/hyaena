@@ -9,7 +9,7 @@
   "moduleType": [
     "amd"
   ],
-  "homepage": "hyaena.org",
+  "homepage": "hyaena.dounine.com",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -29,6 +29,8 @@
     "requirejs": "^2.2.0",
     "require-css": "^0.1.8",
     "angular-file-upload": "^2.3.1",
-    "angular-ui-router": "^0.2.18"
+    "angular-ui-router": "^0.2.18",
+    "easing": "*",
+    "iCheck": "icheck#^1.0.2"
   }
 }

@@ -1,6 +1,3 @@
-/**
- * Created by huanghuanlai on 16/4/7.
- */
 define(["app"], function(app) {
     "use strict";
 
@@ -19,46 +16,24 @@ define(["app"], function(app) {
             url : "/index",
             views : {
                 "" : {
-                    templateUrl : "admin/menu",
-                    controller:'cddCheckController'
-                }
-            }
-        }).state("clouddisk",{
-            url : "/clouddisk",
-            views : {
-                "":{
-                    templateUrl : "admin/clouddisk/content",
-                    controller : "cddController"
-                }
-            }
-        }).state("fileList", {
-            url : "/fileList?{path}",
-            views : {
-                "" : {
-                    templateUrl : "admin/clouddisk/file/content"
+                    templateUrl : "core/content",
+                    controller: "captureController"
                 },
-                "list@fileList" : {
-                    templateUrl : "admin/clouddisk/file/list/content",
-                    controller : "cddFileController"
+                "database@index":{
+                    templateUrl:"core/tmp",
+                    controller:"databaseController"
                 },
-                "captcha@fileList" : {
-                    templateUrl :"admin/clouddisk/captcha/content",
-                    controller : "cddCaptchaController"
-                }
-            }
-        }).state("fileSearch", {
-            url : "/fileSearch?{path}",
-            views : {
-                "" : {
-                    templateUrl : "admin/clouddisk/file/content",
-                    controller : "cddFileSearchController"
+                "service@index":{
+                    templateUrl:"core/tmp",
+                    controller:"serviceController"
                 },
-                "list@fileSearch" : {
-                    templateUrl : "admin/clouddisk/file/list/content",
-                    controller : "cddFileController"
+                "controller@index":{
+                    templateUrl:"core/tmp",
+                    controller:"controllerController"
                 },
-                "captcha@fileSearch" : {
-                    templateUrl :"admin/clouddisk/captcha/content"
+                "view@index":{
+                    templateUrl:"core/tmp",
+                    controller:"viewController"
                 }
             }
         })

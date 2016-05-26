@@ -1,4 +1,5 @@
 **/target/
+**/.sass-cache/
 **/*.iml
 **/.idea/
 core/hyaena-web/bower_components/
