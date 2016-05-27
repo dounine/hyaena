@@ -25,7 +25,6 @@ public class LoginCheckAction {
 		userCheckLoginParameter.setClearCacheStore(true);//清除本地cookieStore缓存文件
 		UserCheckLoginParser userCheckLoginParser = new UserCheckLoginParser(ClouddiskAction.LOGIN_USER_TOKEN);
 		UserCheckLogin userCheckLogin = userCheckLoginParser.parse(userCheckLoginParameter);
-		responseText.setSuccess(userCheckLogin.getErrno()==0);
 		responseText.setMsg(userCheckLogin.getCddmsg());
 		return responseText;
 	}

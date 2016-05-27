@@ -6,7 +6,6 @@ package com.dounine.hyaena.web;
 public class ResponseText {
 
     private int errno = 0;
-    private boolean success = true;
     private Object data;
     private String msg;
 
@@ -29,14 +28,6 @@ public class ResponseText {
 
     public void setErrno(int errno) {
         this.errno = errno;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
     }
 
     public String getMsg() {

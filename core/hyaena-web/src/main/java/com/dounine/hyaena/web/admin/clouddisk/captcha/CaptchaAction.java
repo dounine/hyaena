@@ -30,7 +30,6 @@ public class CaptchaAction {
 	@RequestMapping(value = "valid", method = RequestMethod.POST)
 	public ResponseText validCaptcha(String account, CaptchaValidator captchaValidator) {
 		ResponseText responseText = new ResponseText();
-		responseText.setSuccess(false);
 		CaptchaThreadValidator.validCaptchaValidator(account, captchaValidator);
 		boolean appRun = true,tout=true;
 		int scount = 0;
@@ -40,13 +39,12 @@ public class CaptchaAction {
 				scount+=1;
 				if(scount>=30){
 					responseText.setMsg("登录超时");
-					responseText.setSuccess(false);
+					responseText.setErrno(444);
 					tout = false;
 				}
 				CaptchaValidator cv = CaptchaThreadValidator.getCaptchaValidator(account);
 				if(StringUtils.isNotBlank(cv.getValidMsg())){//登录信息不为空,证明线程处理完毕
 					responseText.setMsg(cv.getValidMsg());
-					responseText.setSuccess(cv.isSuccess());
 					appRun = false;
 				}
 			} catch (InterruptedException e) {

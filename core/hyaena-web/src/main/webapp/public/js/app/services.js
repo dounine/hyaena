@@ -44,7 +44,7 @@ define(['angular'], function(angular) {
             return $http.get("capture/navs")
         }
         function list(type) {
-            return $http.get(type+"/list")
+            return $http.get("capture/"+type+"/list")
         }
     }
 

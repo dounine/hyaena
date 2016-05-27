@@ -21,28 +21,24 @@ define(["angular","app/services"], function(angular) {
         $scope.name = "database";
         captureService.list($scope.name).success(function (response) {
             $scope.list = response.data;
-            $scope.size = $scope.list.length;
         });
     }
     function serviceController($scope,$rootScope,captureService) {
         $scope.name = "service";
         captureService.list($scope.name).success(function (response) {
             $scope.list = response.data;
-            $scope.size = $scope.list.length;
         });
     }
     function controllerController($scope,$rootScope,captureService) {
         $scope.name = "controller";
         captureService.list($scope.name).success(function (response) {
             $scope.list = response.data;
-            $scope.size = $scope.list.length;
         });
     }
     function viewController($scope,$rootScope,captureService) {
         $scope.name = "view";
         captureService.list($scope.name).success(function (response) {
             $scope.list = response.data;
-            $scope.size = $scope.list.length;
         });
     }
     function hyaenaController($scope, $rootScope) {
